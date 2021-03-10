@@ -7,7 +7,7 @@ Este repositorio contiene una serie de requerimientos de un Caso Práctico, que 
 
 # Importante
 
-Máximo de 3-4 días y enviar todo lo que puedas de esta prueba y verificar tus conocimientos.
+De 3-4 días y enviar todo lo que puedas de esta prueba y verificar tus conocimientos.
 
 Se requiere de una cuenta de GitHub para realizar este ejercicio.
 
@@ -31,24 +31,23 @@ Familiaridad con librerías, frameworks y plataformas de desarrollo.
 2. Clonar el fork a su máquina local git clone git@github.com:USERNAME/FORKED-PROJECT.git
 3. Crear un branch en su cuenta de GitHub utilizando su nombre completo.
 4. Se recomienda añadir un archivo.md en la solución aportada para explicar mediante texto lo que se considere oportuno.
-5. Al finalizar, existen 2 opciones para entregar su proyecto:
+5. Existen 2 opciones para entregar su proyecto:
 6. Realizar un Commit de su proyecto, enviar un Pull Request al branch con su nombre, y notificar a la siguiente dirección de correo electrónico luis.palacios@geeks.com.ec.
 7. Crear un archivo comprimido (.zip o .rar) de su proyecto y enviar a la siguiente dirección de correo electrónico luis.palacios@geeks.com.ec.
 
 ## Descripción
-Se solicita la creación de una API REST que gestione las alineaciones de los partidos de fútbol, los jugadores alineados en ellas y las acciones que generan estos jugadores durante un partido.
+Se solicita la creación de una API REST que gestione las alineaciones de los partidos de fútbol ecuatoriano, los jugadores alineados en ellas y las acciones que generan estos jugadores durante un partido.
 
 ## Especificaciones
-1. Las alineaciones adoptan una formación (e.g. 4-4-2) de entre varias (4-4-2, 4-3-3, 3-4-3). No es necesario incluir ninguna más.
+1. Las alineaciones adoptan una formación (e.g. 4-4-2) de entre varias (4-4-2, 4-3-3, 3-4-3, 5-4-1). No es necesario incluir ninguna más.
 2. Una alineación es del equipo local o visitante. No es necesario gestionar datos de equipos.
-3. Los jugadores tienen un nickname (nombre de la camiseta), un dorsal y una posición (por defecto).
+3. Los jugadores tienen un nombre de la camiseta, un espalda y una posición donde juegan.
 4. Se alinean un máximo de 11 jugadores en un partido.
 5. Se asume que un jugador adopta su posición en cualquier alineación.
-6. Omitimos restricciones de posiciones en una alineación según su formación. (Puede haber 11 porteros 😆)
-7. Las acciones son de un tipo (tarjeta amarilla o roja, gol/gol en propia puerta, asistencia). No es necesario incluir ninguna más.
-8. Las acciones ocurren en un minuto concreto del partido.
-9. Las acciones van asociadas a un jugador alineado.
-10. Omitimos la gestión de cambios de jugadores en la alineación.
+6. Las acciones son de un tipo (gol, auto gol, asistencia). No es necesario incluir ninguna más.
+7. Las acciones ocurren en un minuto concreto del partido.
+8. Las acciones van asociadas a un jugador alineado.
+9. No hay cambios ni restricciones de jugadores en posiciones.
 
 ## Funcionalidad
 1. Poder crear, editar y eliminar una alineación.
