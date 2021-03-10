@@ -60,7 +60,7 @@ Se solicita la creación de una API REST que gestione las alineaciones de los pa
 
 ## Requisitos
 1. Requerido usar Docker y Docker Compose para crear los diferentes servicios.
-2. Se puede usar el lenguaje que se desee, aunque valoramos preferiblemente NodeJS o Go.
+2. Se puede usar el lenguaje que se desee, aunque valoramos preferiblemente NodeJS o afín.
 3. Se puede usar cualquier motor base de datos, aunque valoramos preferiblemente cualquier SQL.
 4. Se puede hacer uso de ORM o QueryBuilder.
 5. Se puede hacer uso de frameworks y librerías de terceros.
