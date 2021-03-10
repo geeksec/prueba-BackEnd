@@ -1,4 +1,4 @@
-# prueba-BackEnd
+# Pruebas-para-BackEnd
 Git de repositorio para pruebas de BackEnd en GeeksEC
 
 # Introducción
@@ -71,4 +71,4 @@ Se valorará un correcto control de errores.
 
 
 
-Este ejemplo es tomado de nuestro referente en desarrollo: https://github.com/Footters
+Este ejemplo es tomado de nuestro referente en desarrollo: https://footters.com/
