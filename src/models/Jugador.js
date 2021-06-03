@@ -15,7 +15,7 @@ const Jugador = sequelize.define('jugador', {
         type: INTEGER
     },
     posicion: {
-        type: INTEGER
+        type: STRING
     },
     status: {
         type: BOOLEAN,
