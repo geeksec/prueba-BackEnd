@@ -1,11 +1,10 @@
 import { Router } from 'express'
-import config from '../config/vars'
 const router = Router();
 
 router.get('/', (req, res) => {
     res.status(200).json({
-        message: `PRUEBA BACKEND | GEEKS - API ${config.VERSION}`
-    });
-})
+        message: 'API GEEKS - PRUEBA BACKEND - v1.0.0'
+    })
+});
 
 export default router;
