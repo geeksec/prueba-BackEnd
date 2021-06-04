@@ -27,7 +27,7 @@ app.listen(port, () => {
 
     //Verificamos la conexion a la base de dato
     sequelize.sync({ force: false }).then(() => {
-        console.log("SUCCESS: Nos hemos conectado a la base de datos");
+        console.log("SUCCESS: Conectados a la base de datos");
     }).catch(error => {
         console.log('ERROR: Se ha producido un error', error);
     })

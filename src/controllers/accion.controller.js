@@ -1,7 +1,7 @@
 import Accion from '../models/Accion'
 
 const crearAccion = async (req, res) => {
-    const { nombre } = req.body;
+    const { nombre, minuto, alineacionId } = req.body;
     try {
         
         const existeaccion = await Accion.count({
@@ -15,9 +15,11 @@ const crearAccion = async (req, res) => {
             })
         }
         const accion = await Accion.create({
-            nombre
+            nombre,
+            minuto, 
+            alineacionId
         }, {
-                fields: ['nombre']
+                fields: ['nombre', 'minuto', 'alineacionId']
             });
 
         if (accion) {

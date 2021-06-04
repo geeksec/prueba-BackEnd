@@ -108,7 +108,6 @@ const agregarJugadorAlineacion = async (req, res) => {
                 id: jugadorId
             }
         })
-
         if (existejugador === null) {
             return res.status(205).json({
                 message: 'ERROR: No existe un jugador con este id'
@@ -121,30 +120,37 @@ const agregarJugadorAlineacion = async (req, res) => {
             }
         })
         //traemos el numero de jugadores por posicion en la alineacion
-        const posiciones = await Jugador.findAll({
-            attributes: ['posicion', [sequelize.fn('count', sequelize.col('posicion')), 'count']],
-            group: ['posicion'],
-            order: [['posicion', 'ASC']],
-            raw: true,
+        const countdefensas = await Jugador.count({
+            where: {
+                alineacionId,
+                posicion: 'defensa'
+            }
+        });
+        const countvolantes = await Jugador.count({
+            where: {
+                alineacionId,
+                posicion: 'volante'
+            }
+        });
+        const countdelanteros = await Jugador.count({
+            where: {
+                alineacionId,
+                posicion: 'delantero'
+            }
+        });
+
+        const countequipo = await Jugador.count({
             where: {
                 alineacionId
             }
         });
-        let estado = true;
-        console.log(existejugador.posicion, posiciones[2].count, alineacion.delanteros);
-        if (existejugador.posicion === 'defensa' && posiciones[0].count <= alineacion.defensas) {
-            estado = false;
-        } else if (existejugador.posicion === 'volante' && posiciones[1].count <= alineacion.volantes) {
-            estado = false;
-        } else if (existejugador.posicion === 'delantero' && posiciones[2].count <= alineacion.delanteros) {
-            estado = false;
-        }
-        if (estado) {
+
+        if(countequipo > 10) {
             return res.status(205).json({
-                message: `ERROR: Alineacion de ${existejugador.posicion} esta completa`
+                message: 'ERROR: La alineacion esta completa'
             })
         }
-
+ 
         //validamos que el  jugador no este alineado
         if(existejugador.alineacionId !== null) {
             return res.status(205).json({

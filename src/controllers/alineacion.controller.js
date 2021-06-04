@@ -1,5 +1,6 @@
 import Alineacion from '../models/Alineacion'
 import Jugador from '../models/Jugador';
+import Accion from '../models/Accion';
 
 const crearAlineacion = async (req, res) => {
     const { nombre, defensas, volantes, delanteros } = req.body;
@@ -139,7 +140,7 @@ const listarAlineaciones = async (req, res) => {
             where: {
                 id
             },
-            include: Jugador
+            include: [Jugador, Accion]
         })
 
         return res.status(200).json({

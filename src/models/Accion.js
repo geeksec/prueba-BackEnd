@@ -11,6 +11,12 @@ const Accion = sequelize.define('accion', {
     nombre: {
         type: STRING
     },
+    minuto: {
+        type: INTEGER
+    },
+    alineacionId: {
+        type: INTEGER
+    },
     status: {
         type: BOOLEAN,
         defaultValue: true

@@ -1,6 +1,7 @@
 import { INTEGER, STRING, BOOLEAN } from 'sequelize';
 import sequelize from '../config/database';
 import Jugador from '../models/Jugador'
+import Accion from '../models/Accion'
 
 const Alineacion = sequelize.define('alineacion', {
     id: {
@@ -61,5 +62,8 @@ const Alineacion = sequelize.define('alineacion', {
 
 Alineacion.hasMany(Jugador, { foreinkey: 'alineacionId', sourceKey: 'id' });
 Jugador.belongsTo(Alineacion, { foreinkey: 'alineacionId', targetId: 'id' });
+
+Alineacion.hasMany(Accion, { foreinkey: 'alineacionId', sourceKey: 'id' });
+Accion.belongsTo(Alineacion, { foreinkey: 'alineacionId', targetId: 'id' });
 
 export default Alineacion; 
