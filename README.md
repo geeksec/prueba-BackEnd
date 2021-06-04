@@ -60,6 +60,9 @@ BORRAR JUGADOR DE ALINEACION
 <br>
 DELETE => http://localhost:4001/api/jugador/eliminarjugador/7
 <br>
+LISTAR JUGADORES CON PAGINACION<br>
+GET => http://localhost:4001/api/jugador/lista/defensa/1/5
+<br>
 <br>
 <br>
 CREAR ACCION<br>
