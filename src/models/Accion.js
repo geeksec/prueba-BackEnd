@@ -1,7 +1,7 @@
 import { INTEGER, STRING, BOOLEAN } from 'sequelize';
 import sequelize from '../config/database';
 
-const Jugador = sequelize.define('jugador', {
+const Accion = sequelize.define('accion', {
     id: {
         type: INTEGER,
         unique: true,
@@ -11,21 +11,6 @@ const Jugador = sequelize.define('jugador', {
     nombre: {
         type: STRING
     },
-    numero: {
-        type: INTEGER,
-        validate: {
-            isInt: {
-                args: true,
-                msg: "Numero tiene que ser un numero"
-            }
-        }
-    },
-    posicion: {
-        type: STRING
-    },
-    alineacionId: {
-        type: INTEGER
-    },
     status: {
         type: BOOLEAN,
         defaultValue: true
@@ -34,4 +19,5 @@ const Jugador = sequelize.define('jugador', {
     timestamps: false
 });
 
-export default Jugador; 
+export default Accion;
+

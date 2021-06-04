@@ -8,6 +8,8 @@ const app = express();
 // Import routes
 import indexRoute from './routes/index.route';
 import alineacionRoute from './routes/alineacion.route';
+import jugadorRoute from './routes/jugador.route';
+import accionRoute from './routes/accion.route';
 
 // Middlewares
 app.use(morgan('dev'));
@@ -17,6 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use('/api', indexRoute);
 app.use('/api/alineacion', alineacionRoute);
+app.use('/api/jugador', jugadorRoute);
+app.use('/api/accion', accionRoute)
 
 app.listen(port, () => {
     console.log(`INFO: Server in running on port ${port}`)

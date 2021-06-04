@@ -1,4 +1,5 @@
 import Alineacion from '../models/Alineacion'
+import Jugador from '../models/Jugador';
 
 const crearAlineacion = async (req, res) => {
     const { nombre, defensas, volantes, delanteros } = req.body;
@@ -60,6 +61,16 @@ const editarAlineacion = async (req, res) => {
                 message: 'ERROR: La alineacion debe tener 11 jugadores incluido el portero'
             })
         }
+        const existealineacionnombre = await Alineacion.count({
+            where: {
+                nombre: nombre
+            }
+        })
+        if (existealineacionnombre > 0) {
+            return res.status(205).json({
+                message: 'ERROR: Ya existe una alineación con este nombre'
+            })
+        }
         const existealineacion = await Alineacion.count({
             where: {
                 id
@@ -91,7 +102,6 @@ const editarAlineacion = async (req, res) => {
     }
 }
 
-
 const eliminarAlineacion = async (req, res) => {
     const { id } = req.params;
     try {
@@ -119,4 +129,30 @@ const eliminarAlineacion = async (req, res) => {
         })
     }
 }
-export default { crearAlineacion, editarAlineacion, eliminarAlineacion }
+
+const listarAlineaciones = async (req, res) => {
+
+    const { id } = req.params;
+
+    try {
+        const alineacion = await Alineacion.findAll({
+            where: {
+                id
+            },
+            include: Jugador
+        })
+
+        return res.status(200).json({
+            data: alineacion
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message: error,
+            data: {},
+        })
+    }
+
+}
+
+
+export default { crearAlineacion, editarAlineacion, eliminarAlineacion, listarAlineaciones }
