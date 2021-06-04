@@ -18,7 +18,7 @@ const crearAccion = async (req, res) => {
             nombre,
             minuto, 
             alineacionId
-        }, {
+        }, { 
                 fields: ['nombre', 'minuto', 'alineacionId']
             });
 
